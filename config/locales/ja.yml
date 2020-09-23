@@ -205,6 +205,7 @@ ja:
     pm: 午後
   views:
     messages:
+      do_not_have_the_permission_to_delete: 削除する権限がありません
       create_agenda: 'アジェンダ作成に成功しました！'
       create_article: '記事作成に成功しました！'
       update_article: '記事更新に成功しました！'

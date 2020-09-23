@@ -2,7 +2,6 @@ class AssignsController < ApplicationController
   before_action :authenticate_user!
   before_action :email_exist?, only: [:create]
   before_action :user_exist?, only: [:create]
-
   def create
     team = find_team(params[:team_id])
     user = email_reliable?(assign_params) ? User.find_or_create_by_email(assign_params) : nil
@@ -17,7 +16,6 @@ class AssignsController < ApplicationController
   def destroy
     assign = Assign.find(params[:id])
     destroy_message = assign_destroy(assign, assign.user)
-
     redirect_to team_url(params[:team_id]), notice: destroy_message
   end
 
@@ -25,9 +23,10 @@ class AssignsController < ApplicationController
   def assign_params
     params[:email]
   end
-
   def assign_destroy(assign, assigned_user)
-    if assigned_user == assign.team.owner
+    if current_user != assign.team.owner || current_user != assigned_user
+      I18n.t('views.messages.do_not_have_the_permission_to_delete')
+    elsif assigned_user == assign.team.owner
       I18n.t('views.messages.cannot_delete_the_leader')
     elsif Assign.where(user_id: assigned_user.id).count == 1
       I18n.t('views.messages.cannot_delete_only_a_member')
