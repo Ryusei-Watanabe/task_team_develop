@@ -255,7 +255,7 @@ ja:
       team_you_belong_to: '所属しているチーム'
       posted_articles: '投稿した記事一覧'
     button:
-      invest: '任命'
+      invest: '権限移動'
       submit: '投稿'
       edit: '編集'
       delete: '削除'
