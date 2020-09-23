@@ -42,7 +42,6 @@
                       <td><%= image_tag 'default.jpg', size: '40x40' %></td>
                       <td><%= assign.user.email %></td>
                       <td><%= link_to I18n.t('views.button.delete'), team_assign_path(@team, assign), method: :delete, class: 'btn btn-sm btn-danger' %></td>
-                      <!-- assignだけじゃだめ? -->
                       <% if @team.owner == current_user %>
                         <td><%= link_to I18n.t('views.button.invest'),  invest_team_assign_path(@team, assign.user.id), method: :patch, class: 'btn btn-sm btn-danger' %></td>
                       <% end %>
