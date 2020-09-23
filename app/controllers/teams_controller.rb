@@ -46,7 +46,12 @@ class TeamsController < ApplicationController
   def dashboard
     @team = current_user.keep_team_id ? Team.find(current_user.keep_team_id) : current_user.teams.first
   end
-
+  def invest
+     @team = Team.find_by(name: params[:team_id])
+     # @team.owner_id = params[:id]
+     @team.update(owner_id: params[:id])
+     redirect_to @team, notice: I18n.t('views.messages.invest_owner_authority')
+  end
   private
 
   def set_team

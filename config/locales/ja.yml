@@ -205,6 +205,7 @@ ja:
     pm: 午後
   views:
     messages:
+      invest_owner_authority: 'オーナー権限を譲渡しました!'
       create_agenda: 'アジェンダ作成に成功しました！'
       create_article: '記事作成に成功しました！'
       update_article: '記事更新に成功しました！'
@@ -254,6 +255,7 @@ ja:
       team_you_belong_to: '所属しているチーム'
       posted_articles: '投稿した記事一覧'
     button:
+      invest: '任命'
       submit: '投稿'
       edit: '編集'
       delete: '削除'
