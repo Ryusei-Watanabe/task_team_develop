@@ -205,7 +205,9 @@ ja:
     pm: 午後
   views:
     messages:
-      invest_owner_authority: 'オーナー権限を譲渡しました!'
+      team_name: 'チーム名'
+      is_invested_team_owner: 'チームのリーダーに任命されました'
+      invest_owner_authority: 'リーダー権限を譲渡しました!'
       create_agenda: 'アジェンダ作成に成功しました！'
       create_article: '記事作成に成功しました！'
       update_article: '記事更新に成功しました！'
