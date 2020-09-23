@@ -11,7 +11,9 @@
               <%= @team.name %>
             </div>
             <!-- 下と同じようにチームリーダだけが編集できる -->
-            <%= link_to I18n.t('views.messages.edit_team'), edit_team_path(@team), class: 'btn btn-success btn-block mt-3' %>
+            <% if @team.owner == current_user %>
+              <%= link_to I18n.t('views.messages.edit_team'), edit_team_path(@team), class: 'btn btn-success btn-block mt-3' %>
+            <% end %>
           </div>
 
           <div class="col-md-8">
