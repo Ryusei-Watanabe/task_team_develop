@@ -205,6 +205,9 @@ ja:
     pm: 午後
   views:
     messages:
+      agenda_is_delete: 'アジェンダが削除されました'
+      complete_delete: '削除完了'
+      can_not_destroy_agenda: 'アジェンダを削除できません'
       destroy_agenda: 'アジェンダを削除しました'
       create_agenda: 'アジェンダ作成に成功しました！'
       create_article: '記事作成に成功しました！'
