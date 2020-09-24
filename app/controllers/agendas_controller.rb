@@ -23,8 +23,8 @@ class AgendasController < ApplicationController
   def destroy
     # params[:id]はアジェンダのid。@agenda.team_idでチームのidを取得
     # 全員のemailを取得する。@agendaのteam_idを使って、TeamのアソシエーションメソッドmembersでUserのemailを取得する。
-
-    if @agenda.destroy
+    if current_user.id == @agenda.user_id || current_user == @agenda.team.owner
+      @agenda.destroy
       team_members_email = @agenda.team.members.pluck(:email)
       team_members_email.each do |email|
         AgendaMailer.delete_mail(email, @agenda).deliver
